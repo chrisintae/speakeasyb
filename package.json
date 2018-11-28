@@ -1,0 +1,30 @@
+{
+  "name": "speakeasyb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "live-server ./dist",
+    "build": "webpack --config webpack.config.js --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "handlebars-loader": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.3.1",
+    "live-server": "^1.2.0",
+    "mini-css-extract-plugin": "^0.4.3",
+    "node-sass": "^4.9.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1"
+  },
+  "dependencies": {
+    "aos": "^3.0.0-beta.6",
+    "gsap": "^2.0.2",
+    "smoothie-js": "^1.0.3"
+  }
+}

@@ -1,0 +1,118 @@
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.watch-btn-container {
+  position: relative;
+  float: right;
+  // border: 1px solid #fff;
+  overflow: hidden;
+  padding: .5em 1.4em .2em;
+
+  z-index: 1;
+  transition: all .3s ease-in-out;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: $white;
+    z-index: -1;
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover,
+  &:hover .watch-btn {
+    color: $black;
+
+    &:after {
+      width: 110%;
+    }
+  }
+}
+
+.menu {
+  display: none;
+}
+
+@media(min-width: 1080px) {
+  .menu {
+    display: block;
+    margin: 1% 1.5%;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        font-size: 1rem;
+        margin-right: 20px;
+
+        &:nth-last-child(1) {
+          float: right;
+
+          a:hover {
+
+            &:after {
+              width: 0 !important;
+            }
+          }
+        }
+
+        a {
+          position: relative;
+          display: block;
+          color: $white;
+          cursor: pointer;
+          padding-bottom: 7px;
+
+          &,
+          &:before,
+          &:after {
+            transition: all .3s;
+          }
+
+          &:after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            content: '';
+            width: 0;
+            background: $white;
+            height: 1.5px;
+            margin: auto;
+          }
+
+          &:hover {
+            font-weight: bold;
+
+            &:after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+a.strikethrough {
+  text-decoration: line-through;
+
+  &:after {
+    position: inherit;
+  }
+
+  &:hover:after {
+    width: 0 !important;
+  }
+}
