@@ -22,10 +22,27 @@ section {
 
 a {
   text-decoration: none;
+  transition: all 0.25s ease-in-out;
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.title {
+  font-family: $font-display;
+  font-weight: bold;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+.subtitle {
+  font-family: $font-display;
+  font-weight: 100;
+  line-height: 100%;
+}
+
+.strikeout {
+  text-decoration: line-through;
 }

@@ -2,18 +2,33 @@
   <section id="hero" class="container">
     <div id="mainContainer" class="main-container">
       <div id="subContainer" class="subtitle-container">
-        <h1 id="subtitle">A film by Becca Park</h1>
+        <h1 id="subtitle" class="subtitle">A film by Becca Park</h1>
       </div>
 
       <div id="titleContainer" class="title-container">
-        <h1 id="titleSpeak">Speak&nbsp;</h1>
-        <h1 id="titleEasy">Easy</h1><span id="titleComma">,&nbsp;</span>
-        <h1 id="titleB">B</h1>
-      </div>
-
-      <div id="mainCtaContainer" class="main-cta-container">
-        <a data-smoothie id="watchBtn" class="main-btn" href="#videoSection">Watch Trailer</a>
+        <h1 id="titleSpeak" class="title">Speak&nbsp;</h1>
+        <h1 id="titleEasy" class="title">Easy</h1><span id="titleComma">,&nbsp;</span>
+        <h1 id="titleB" class="title">B</h1>
       </div>
     </div>
+
+    <div id="videoBtn" class="arrow-container">
+      <div id="videoTextContainer" class="video-text-container">
+        <div id="videoText">
+          <h5>watch</h5>
+          <h4>trailer</h4>
+        </div>
+      </div>
+      <div id="arrowBox" class="arrow-box"></div>
+      <div class="arrow-line"></div>
+      <div id="arrowHead" class="arrow-head"></div>
+    </div>
   </section>
+
+  {{>video}}
+
+  {{>menu}}
+
+  {{>about}}
+
 </main>

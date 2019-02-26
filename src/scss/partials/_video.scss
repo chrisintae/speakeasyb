@@ -1,0 +1,159 @@
+// trailer button
+.arrow-container {
+  position: absolute;
+  bottom: 15%;
+  right: 15%;
+  background: transparent;
+  opacity: 1;
+  z-index: 9;
+
+  .video-text-container {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 115px;
+    height: auto;
+    overflow: hidden;
+    color: $white;
+    @extend %text-shadow;
+    text-align: left;
+
+    h4, h5 {
+      line-height: 100%;
+    }
+
+    h4 {
+      font-size: 3em;
+    }
+
+    h5 {
+      font-size: 1.5em;
+      padding-right: 2px;
+    }
+  }
+
+  .arrow-box {
+    position: relative;
+    left: 158px; //194px;
+    width: 90px;
+    height: 90px;
+    background: transparent;
+    border: 1px solid $white;
+    transition: all 150ms ease-out;
+  }
+
+  .arrow-line {
+    position: relative;
+    top: -43px;
+    left: 0;
+    background: $white;
+    height: 1px;
+    width: 200px;
+    transition: all 150ms ease-out;
+  }
+
+  .arrow-head {
+    position: relative;
+    top: -58px;
+    left: 200px;
+    box-sizing: border-box;
+    width: 10px;
+    height: 15px;
+    border-left: solid 10px $white;
+    border-bottom: solid 15px transparent;
+    border-top: solid 15px transparent;
+    transition: all 150ms ease-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    > .arrow-box {
+      // left: 194px;
+      // border-width: 1px;
+      // transition-delay: 100ms;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    // > .arrow-head {
+    //   left: 235px;
+    // }
+
+    // > .arrow-line {
+    //   width: 225px;
+    //   left: 12px;
+    // }
+  }
+}
+
+
+
+// trailer modal
+
+
+
+// // video
+// aside.modal {
+//   display: none;
+//   position: absolute;
+//   top: 0;
+//   width: 100%;
+//   height: 0;
+//   // background: $absBlack;
+//   background: rgba(0, 0, 0, 0.8);
+//   overflow: hidden;
+
+//   .video-container {
+//     max-width: 800px;
+//     opacity: 1;
+//     margin: 0 auto;
+//     padding: 20px;
+//   }
+// }
+
+// video section
+// section.video-section{
+//   flex-direction: column;
+//   height: 70vh;
+//   min-height: 300px;
+
+//   .description {
+//     position: relative;
+//     width: 100%;
+//     max-width: 850px;
+//     font-size: 2rem;
+//     line-height: 145%;
+//     text-align: center;
+//     padding: 30px;
+
+//     h3 {
+//       padding-bottom: 30px;
+//     }
+
+//     &:after {
+//       content: " ";
+//       background: $black;
+//       height: 3px;
+//       width: 60px;
+//       position: absolute;
+//       left: 0;
+//       right: 0;
+//       margin-left: auto;
+//       margin-right: auto;
+//     }
+//   }
+
+//   .video-container {
+//     width: 100%;
+//     margin: 0 auto;
+//     padding: 0 10px;
+//   }
+
+//   iframe {
+//     position: relative;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     padding: 10px;
+//   }

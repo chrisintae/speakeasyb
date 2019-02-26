@@ -8,8 +8,18 @@ $font-sans: 'Open Sans Condensed', sans-serif;
 
 // colors
 $absBlack: #000000;
-$black: #141414;
+$black: #0e1111; //#141414;
 $white: #ffffff;
 $gray: #ededee;
+$gold: #d4af37;
+$brown: #9D7F61; //#D3BC8D;
+$tan: #eadfca;
+$offwhite: #F3EFE0;
+$shadow: #666666;
 
 $play_btn_color: #00ffcc;
+
+%text-shadow {
+    text-shadow: 1px 1px 20px $shadow;
+}
+

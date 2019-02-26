@@ -1,28 +1,28 @@
-let tl = new TimelineLite();
+export function start() {
+  let tl = new TimelineLite();
 
-tl
-  .set(preloader, { opacity: 0, immediateRender: true}, 0)
-  .set(videoSection, { display: "none", immediateRender: true }, 0)
-  .set(contact, { display: "none", immediateRender: true }, 0)
+  tl
+    // set
+    .set(preloader, { opacity: 1, immediateRender: true}, 0)
+    .set(titleContainer, { scale: 1.25, immediateRender: true}, 0)
 
-  .to(preloader, 0.5, { opacity: 1, ease: Expo.easeInOut }, '+=0.25')
+    // into
+    .from(titleSpeak, 0.25, { opacity: 0, ease: Expo.easeIn }, '+=0.5')
+    .from(titleEasy, 0.25, { opacity: 0, ease: Expo.easeIn }, '+=0.5')
+    .from(titleComma, 0.25, { opacity: 0, ease: Expo.easeIn }, '+=0.5')
+    .from(titleB, 0.25, { opacity: 0, ease: Expo.easeIn }, '-=0.25')
 
-  .from(titleSpeak, 0.25, { opacity: 0, ease: Expo.easeIn }, '+=0.5')
-  .from(titleEasy, 0.25, { opacity: 0, ease: Expo.easeIn }, '+=0.5')
-  .from(titleComma, 0.25, { opacity: 0, ease: Expo.easeIn }, '+=0.5')
-  .from(titleB, 0.25, { opacity: 0, ease: Expo.easeIn }, '-=0.25')
-  .from(mainCtaContainer, 1, { display: "none"}, '-=0.25')
+    // intro - out
+    .to(preloader, 0.5, { opacity: 0 }, '+=0.5')
+    .to(preloader, 0.5, { display: "none" }, '-=0.5')
 
-  .to(preloader, 0.5, { opacity: 0 }, '+=0.5')
+    // main 
+    .fromTo(titleContainer, 1, { scale: 1.25 }, { scale: 1, ease: Power2.easeOut }, 'Title')
+    .from(subContainer, 1, { opacity: 0 }, 'Title')
+    .from(awardsContainer, 1, { opacity: 0, }, 'Title')
+    .from(videoBtn, 1, { opacity: 0 }, 'Title')
+    .from(arrowBox, .5, { css: { left: '0' }, ease: Power2.easeOut}, '-=0.5')
+    .from(menuBtnContainer, .5, { css: {left: "calc(0% - 87px)"}, ease: Power2.easeOut}, '-=0.25')
+}
 
-  .to(preloader, 0.5, { display: "none" }, '-=0.5')
-  .to(titleContainer, 1, { scale: 1, ease: Power2.easeOut }, '-=0.5')
-  .from(subContainer, 1, { opacity: 0 }, '-=0.5')
-  .to(mainContainer, 1, { marginBottom: 80, ease: Power2.easeOut }, '-=1.5')
-
-  .from(mainCtaContainer, 1, { opacity: 0, ease: Power2.easeOut }, '-=0.5')
-  .staggerFrom(".menu ul li", 0.75, { opacity: 0 }, 0.35, '-=0.5')
-  .to(videoSection, 0.25, { display: "flex" }, '-=0.5')
-  .to(contact, 0.25, { display: "flex" }, '-=0.5')
-
-tl.play();
+start();
