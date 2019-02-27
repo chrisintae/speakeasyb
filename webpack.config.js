@@ -6,9 +6,11 @@ const autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: {
-    bundle: './src/scripts/app.js'
+    bundle: './src/scripts/app.js',
+    // preloader: './src/scripts/preloader.js'
   },
   output: {
+    filename: '[name].js',
     path: path.resolve(__dirname, './dist')
   },
   module: {
@@ -92,6 +94,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Speak Easy B',
       template: './src/index.handlebars'
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Gallery - Speak Easy B',
+      filename: 'gallery/index.html',
+      template: './src/gallery.handlebars'
     })
   ]
 };

@@ -1,0 +1,81 @@
+section.contact {
+  background: #141414;
+  flex-direction: column;
+  height: 30vh;
+  min-height: 180px; 
+
+  .contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%; 
+
+    .email-container {
+      padding-top: 30px; 
+
+
+      a {
+        font-size: 1rem;
+        color: #ffffff;
+        transition: all .5s;
+
+        &:hover {
+          font-size: 1.25rem; 
+        }
+      }
+    }
+  }
+
+  .logo-images-container {
+    padding-bottom: 30px; 
+
+    .logo-seedandspark {
+      width: 90px;
+      margin-right: 120px;
+    }
+
+    .logo-vimeo {
+      width: 62px;
+    }
+  }
+
+  footer {
+    position: relative;
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    
+    footer p.copyright {
+      font-size: 0.8rem; 
+    }
+  }
+}
+
+@media (min-width: 1080px) {
+  section.contact {
+    height: 100vh; 
+
+    .contact-container .email-container a {
+      font-size: 1.5rem;
+      transition: all .5s; 
+
+      &:hover {
+        font-size: 1.75rem; 
+      }
+    }
+
+    .logo-images-container {
+      padding-bottom: 40px; 
+    
+      .logo-seedandspark {
+        margin-right: 20px;
+      }
+    }
+      
+    footer p.copyright {
+      font-size: 1rem; 
+    }
+  }   
+}  

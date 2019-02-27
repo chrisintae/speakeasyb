@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Speak Easy B | A film by Becca Park</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60185096-11"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-60185096-11');
+    </script>
+  </head>
+  <body class="gallery">
+    
+    {{>partials/about}}
+
+    <div id="awardsContainer" class="awards-container">
+      <ul id="awardsList" class="awards-list">
+        <li><img alt="2019 Outfest" src="../static/award_2019_Outfest_x2.png"></li>
+        <li><img alt="2019 Best Shorts" src="../static/award_2019_BestShorts_x2.png"></li>
+        <li><img alt="2019 Disorient" src="../static/award_2019_disorient_x2.png"></li>
+        <li><img alt="2019 California International Shorts Festival" src="../static/award_2019_BestExperimental-CISF_x2.png"></li>
+      </ul>
+    </div>
+
+    {{>partials/contact}}
+
+    {{>partials/video}}
+
+    {{>partials/menu}}
+
+  </body>
+</html>

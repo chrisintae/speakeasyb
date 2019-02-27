@@ -1,30 +1,19 @@
 import { start } from './preloader';
+import { TweenLite } from 'gsap';
 
-const homeBtn = document.getElementById('homeBtn');
+const homeBtn = document.getElementById('homeBtnMenu');
 const menuBtn = document.getElementById('menuBtn');
 const menuModal = document.getElementById('menuModal');
 const menuBtnContainer = document.getElementById('menuBtnContainer');
-const aboutBtn = document.getElementById('aboutBtn');
-const aboutContainer = document.getElementById('quoteContainer');
 
+const videoBtn = document.getElementById('videoBtn');
+const videoBtnMenu = document.getElementById('videoBtnMenu');
+const videoModal = document.getElementById('videoModal');
+const videoContainer = document.getElementById('videoContainer');
+const videoCloseBtn = document.getElementById('videoCloseBtn');
 
-// home button 
-homeBtn.addEventListener('click', function() {
-  menuAnimationOut();
-
-  if (aboutContainer.classList.contains('active')) {
-    // let tl = new TimelineLite();
-
-    // tl 
-    //   .to(quotee, .75, { opacity: 0, ease: Expo.easeInOut })
-    //   .to(quote, .75, { opacity: 0, ease: Expo.easeInOut }, '+=.5')
-    //   .to(quoteContainer, .75, { opacity: 0, ease: Expo.easeInOut }, '+=1');
-
-      aboutContainer.classList.remove('active');
-  }
-
-  start();
-});
+const iframe = document.querySelector('iframe');
+const player = new Vimeo.Player(iframe);
 
 // menu button
 menuBtn.addEventListener('click', () => {  
@@ -36,9 +25,8 @@ menuBtn.addEventListener('click', () => {
   }
 });
 
-
 // menu animation in
-function menuAnimationIn(e) {
+function menuAnimationIn() {
   menuModal.classList.add('active');
   menuBtnContainer.classList.add('close');
 
@@ -49,18 +37,17 @@ function menuAnimationIn(e) {
     .to(menuTitle, .75, { opacity: 1, ease: Expo.easeInOut }, '-=.1')
     .to(copyright, .75, { opacity: 1, ease: Expo.easeInOut }, '-=.75')
 
-    .staggerTo('ul#menuList li', 1, { opacity: 1 }, 0.25, '+=0')
-}
-
+    .staggerTo('ul#menuList li', 1, { opacity: 1 }, 0.25, '+=0');
+};
 
 // menu animation out
-function menuAnimationOut(e) {
+function menuAnimationOut() {
   let tl = new TimelineLite();
 
   tl
     .to('ul#menuList li', 1, { opacity: 0, ease: Expo.easeInOut }, 'Out')
     .to(copyright, 1, { opacity: 0, ease: Expo.easeInOut }, 'Out')
-    .to(menuTitle, 1, { opacity: 0, ease: Expo.easeInOut, onComplete: closeComplete }, 'Out')
+    .to(menuTitle, 1, { opacity: 0, ease: Expo.easeInOut, onComplete: closeComplete }, 'Out');
 };
 
 function closeComplete() {
@@ -69,19 +56,60 @@ function closeComplete() {
 };
 
 
-// about button
-aboutBtn.addEventListener('click', () => {  
+
+// home button 
+homeBtn.addEventListener('click', () => {
   menuAnimationOut();
-  setInterval(displayAbout, 1000);
+
+  if (menuModal.classList.contains('active')) {
+    videoModalAnimationOut()
+  }
+
+  // if (document.body.classList.contains('index')) {
+  //   start();
+  // } else {
+
+  // }
+   start();
 });
 
-function displayAbout() {
-    aboutContainer.classList.add('active');
 
-    // let tl = new TimelineLite();
 
-    // tl 
-    //   .to(quoteContainer, .75, { opacity: 1, ease: Expo.easeInOut })
-    //   .to(quote, .75, { opacity: 1, ease: Expo.easeInOut }, '+=.5')
-    //   .to(quotee, .75, { opacity: 1, ease: Expo.easeInOut }, '+=1');
-}
+// trailer button
+videoBtn.addEventListener('click', () => {
+  videoModalAnimation();
+});
+
+// watch button
+videoBtnMenu.addEventListener('click', () => {
+  videoModalAnimation();
+});
+
+//video close button
+videoCloseBtn.addEventListener('click', () => {
+  player.pause().then(
+    videoModalAnimationOut()
+  )
+})
+
+// video modal
+function videoModalAnimation() {
+  if (menuModal.classList.contains('active')) {
+    menuAnimationOut();
+  }
+  
+  videoModalAnimationIn();
+};
+
+function videoModalAnimationIn() {
+  videoModal.classList.add('active');
+
+  TweenLite.to(videoContainer, 1, { opacity: 1, ease: Expo.easeIn });
+};
+
+function videoModalAnimationOut() {
+  TweenLite.to(videoContainer, 1.25, { opacity: 0, onComplete: function() {
+    videoModal.classList.remove('active');
+  }});
+  
+};

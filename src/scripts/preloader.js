@@ -21,8 +21,14 @@ export function start() {
     .from(subContainer, 1, { opacity: 0 }, 'Title')
     .from(awardsContainer, 1, { opacity: 0, }, 'Title')
     .from(videoBtn, 1, { opacity: 0 }, 'Title')
-    .from(arrowBox, .5, { css: { left: '0' }, ease: Power2.easeOut}, '-=0.5')
-    .from(menuBtnContainer, .5, { css: {left: "calc(0% - 87px)"}, ease: Power2.easeOut}, '-=0.25')
+    .from(videoTextContainer, .5, { css: { width: '0' }, ease: Power2.easeOut }, 'Title+=.9')
+    .from(arrowBox, .5, { css: { left: '0' }, ease: Power2.easeOut }, 'Title+=0.5')
+    .from(menuBtn, .5, { css: { left: '0' }, ease: Power2.easeOut }, 'Title+=0.75')
 }
 
-start();
+if (document.body.classList.contains('index')) {
+  start();
+}
+
+
+
